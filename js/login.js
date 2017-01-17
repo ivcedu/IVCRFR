@@ -47,14 +47,14 @@ $(document).ready(function() {
             var login_error = loginInfo();
             if(login_error === "") {
 //                window.open('home.html', '_self');
-                return false;
+                swal({title: "Under Construction", text: "Please try later", type: "info"});
             }
             else {
                 $('#error_msg').html(login_error);
                 $('#logn_error').show();
                 this.blur();
-                return false;
             }
+            return false;
         }
     });
     
@@ -63,18 +63,18 @@ $(document).ready(function() {
 
 ////////////////////////////////////////////////////////////////////////////////
 function loginInfo() {   
-    var username = $('#username').val().toLowerCase();
+    var username = $('#username').val().toLowerCase().replace("@ivc.edu", "");
     var password = $('#password').val();
-    var error = loginEmailValidation(username);
-    if(error !== "") {
-        return error;
-    }
+//    var error = loginEmailValidation(username);
+//    if(error !== "") {
+//        return error;
+//    }
     
     var result = new Array();
     username = username.replace("@ivc.edu", "");
     result = getLoginUserInfo("php/login.php", username, password);    
     if (result.length === 0) {
-        return "Invalid Email or Password";
+        return "Invalid Username or Password";
     }
     else {
         var name = objToString(result[0]);
@@ -87,14 +87,14 @@ function loginInfo() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-function loginEmailValidation(login_email) {    
-    if (login_email.indexOf("@ivc.edu") !== -1) {
-        return "";
-    }
-    else {
-        return "Invalid Email";
-    }
-}
+//function loginEmailValidation(login_email) {    
+//    if (login_email.indexOf("@ivc.edu") !== -1) {
+//        return "";
+//    }
+//    else {
+//        return "Invalid Email";
+//    }
+//}
 
 ////////////////////////////////////////////////////////////////////////////////
 function ireportValidation() {
