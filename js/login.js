@@ -80,8 +80,8 @@ function loginInfo() {
         var name = objToString(result[0]);
         var email = objToString(result[1]);
         var department = objToString(result[2]);
-        var phone = objToString(result[3]);
-        sessionData_login(name, email, department, phone);
+        var title = objToString(result[3]);
+        sessionData_login(name, email, department, title);
         return "";
     }
 }

@@ -4,7 +4,7 @@ var m_table;
 window.onload = function() {
     if (sessionStorage.key(0) !== null) {
 //        isLoginAdmin();
-//        getLoginInfo();
+        getLoginInfo();
 //        getMyActiveList();
     }
     else {
@@ -53,10 +53,10 @@ $(document).ready(function() {
 //}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//function getLoginInfo() {
-//    var login_name = sessionStorage.getItem('ss_mrkt_loginName');
-//    $('#login_user').html(login_name);
-//}
+function getLoginInfo() {
+    var login_name = sessionStorage.getItem('ss_rfr_loginName');
+    $('#login_user').html(login_name);
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //function getMyActiveList() {

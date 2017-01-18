@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
-function sessionData_login(loginName, loginEmail, department, phone) {  
-    sessionStorage.setItem('ss_mrkt_loginName', loginName);
-    sessionStorage.setItem('ss_mrkt_loginEmail', loginEmail);
-    sessionStorage.setItem('ss_mrkt_department', department);
-    sessionStorage.setItem('ss_mrkt_phone', phone);
+function sessionData_login(loginName, loginEmail, department, title) {  
+    sessionStorage.setItem('ss_rfr_loginName', loginName);
+    sessionStorage.setItem('ss_rfr_loginEmail', loginEmail);
+    sessionStorage.setItem('ss_rfr_department', department);
+    sessionStorage.setItem('ss_rfr_title', title);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
