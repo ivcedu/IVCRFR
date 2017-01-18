@@ -46,8 +46,8 @@ $(document).ready(function() {
         else {
             var login_error = loginInfo();
             if(login_error === "") {
-//                window.open('home.html', '_self');
-                swal({title: "Under Construction", text: "Please try later", type: "info"});
+                window.open('home.html', '_self');
+//                swal({title: "Under Construction", text: "Please try later", type: "info"});
             }
             else {
                 $('#error_msg').html(login_error);
