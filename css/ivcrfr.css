@@ -25,6 +25,16 @@
     color: #FFFFFF;
 }
 
-.mrkt-input-color {
+.form-input-color {
     color: #cccccc;
+}
+
+.menu-system-setting {
+    display: none !important;
+}
+
+/* datatable column align*/
+th.dt-center, 
+td.dt-center { 
+    text-align: center; 
 }

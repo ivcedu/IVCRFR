@@ -1,10 +1,10 @@
 <?php
-    $server = "ivc.edu";
-    $baseDN = "dc=ivc,dc=edu";
+    $server = "student.ivc.edu";
+    $baseDN = "dc=student,dc=ivc,dc=edu";
          
     $username = filter_input(INPUT_POST, 'username');
     $password = filter_input(INPUT_POST, 'password');
-    $login = "IVCSTAFF\\".$username;
+    $login = "IVC-STUDENT\\".$username;
     $result = array();
 
     $ldapconn = ldap_connect($server);   
@@ -15,26 +15,18 @@
         $ldapbind = ldap_bind($ldapconn, $login, $password);  
         if($ldapbind) {
             $filter = "(&(objectClass=user)(objectCategory=person)(cn=".$username."))";
+//            $filter = "(&(objectClass=user)(objectCategory=person)(!(userAccountControl:1.2.840.113556.1.4.803:=2))(cn=".$username."))";
             $ladp_result = ldap_search($ldapconn, $baseDN, $filter);
             $data = ldap_get_entries($ldapconn, $ladp_result);
 
             if ($data != null) {
-                if (array_key_exists('displayname', $data[0])) {
-                    $name = $data[0]["displayname"][0];
-                }
                 if (array_key_exists('mail', $data[0])) {
                     $email = $data[0]["mail"][0];
                 }
-                if (array_key_exists('department', $data[0])) {
-                    $department = $data[0]["department"][0];
-                }
-                if (array_key_exists('title', $data[0])) {
-                    $title = $data[0]["title"][0];
-                }
 
-                $result = array($name, $email, $department, $title);
+                $result = array($email);
             }
-        }          
+        }
         ldap_close($ldapconn);
     }
     echo json_encode($result);

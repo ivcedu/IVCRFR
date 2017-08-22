@@ -8,21 +8,21 @@
         <title>Home</title>
         <!-- google api css -->
         <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900'>
-        <!-- luna-1.2 css -->
-        <link rel="stylesheet" href="../luna-1.2/vendor/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../luna-1.2/vendor/animate.css/animate.css">
-        <link rel="stylesheet" href="../luna-1.2/vendor/toastr/toastr.min.css"/>
-        <link rel="stylesheet" href="../luna-1.2/vendor/datatables/datatables.min.css">
-        <link rel="stylesheet" href="../luna-1.2/styles/pe-icons/pe-icon-7-stroke.css"/>
-        <link rel="stylesheet" href="../luna-1.2/styles/pe-icons/helper.css"/>
-        <link rel="stylesheet" href="../luna-1.2/styles/stroke-icons/style.css"/>
-        <link rel="stylesheet" href="../luna-1.2/styles/style.css">
+        <!-- luna-1.3 css -->
+        <link rel="stylesheet" href="../luna-1.3/vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../luna-1.3/vendor/animate.css/animate.css">
+        <link rel="stylesheet" href="../luna-1.3/vendor/toastr/toastr.min.css"/>
+        <link rel="stylesheet" href="../luna-1.3/vendor/datatables/datatables.min.css">
+        <link rel="stylesheet" href="../luna-1.3/styles/pe-icons/pe-icon-7-stroke.css"/>
+        <link rel="stylesheet" href="../luna-1.3/styles/pe-icons/helper.css"/>
+        <link rel="stylesheet" href="../luna-1.3/styles/stroke-icons/style.css"/>
+        <link rel="stylesheet" href="../luna-1.3/styles/style.css">
         <!-- include css -->
         <link rel="stylesheet" href="../include/jquery-ui-themes-1.11.4/themes/flick/jquery-ui.min.css"/>
         <link rel="stylesheet" href="../include/bootstrap-3-timepicker/css/bootstrap-timepicker.min.css"/>
         <link rel="stylesheet" href="../include/sweetalert/css/sweetalert.css"/>
         <link rel="stylesheet" href="../include/iconic-1.9.0/font/css/iconic-bootstrap.css"/>
-        <link rel="stylesheet" href="../include/font-awesome-4.6.3/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="../include/font-awesome-4.7.0/css/font-awesome.min.css"/>
         <!-- application css -->
         <link rel="stylesheet" href="css/ivcrfr.css"/>
     </head>
@@ -66,32 +66,85 @@
                         </li>
                         <li>
                             <a href="#uielements" data-toggle="collapse" aria-expanded="false">
-                                <i class="fa fa-bar-chart-o"></i> Reports<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                                <i class="fa fa-pie-chart"></i> Reports<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
                             </a>
                             <ul id="uielements" class="nav nav-second collapse">
                                 <li class="iconic-color-default"><a href="rptMyHistoryList.html">My History</a></li>
                                 <li class="iconic-color-default" style="display: none;" id="nav_rpt_complete_list"><a href="rptCompleteList.html">Completed List</a></li>
                             </ul>
                         </li>
-                        <li style="display: none;" id="menu_administrator">
-                            <a href="#nav_administrator" data-toggle="collapse" aria-expanded="false">
-                                <i class="fa fa-lock"></i> Administrator<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
-                            </a>
-                            <ul id="nav_administrator" class="nav nav-second collapse">
-                                <li class="iconic-color-default"><a href="adminReqList.html">Request List</a></li>
-                                <li class="iconic-color-default"><a href="adminSetting.html">User Access</a></li>
-                            </ul>
-                        </li>
                         <li class="iconic-color-default">
                             <a href="#" id="nav_logout"><i class="fa fa-sign-out"></i> Log Out</a>
                         </li>
+                        <li class="nav-category menu-system-setting">
+                            <i class="fa fa-cogs"></i> System Setting
+                        </li>
+                        <li class="menu-system-setting">
+                            <a href="#nav_sys_user" data-toggle="collapse" aria-expanded="false">
+                                <i class="fa fa-user"></i> Users<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                            </a>
+                            <ul id="nav_sys_user" class="nav nav-second collapse">
+                                <li class="iconic-color-default"><a href="sysUserAdministrator.html">Administrator</a></li>
+                                <li class="iconic-color-default"><a href="sysUserManager.html">Manager</a></li>
+                                <li class="iconic-color-default"><a href="sysUserVPP.html">VP/P</a></li>
+                                <li class="iconic-color-default"><a href="sysUserCommittee.html">Committee</a></li>
+                                <li class="iconic-color-default"><a href="sysUserStudent.html">Student</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-system-setting">
+                            <a href="#nav_sys_request" data-toggle="collapse" aria-expanded="false">
+                                <i class="fa fa-bars"></i> Request<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                            </a>
+                            <ul id="nav_sys_request" class="nav nav-second collapse">
+                                <li class="iconic-color-default"><a href="sysReqUpdate.html">Update</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-system-setting">
+                            <a href="#nav_sys_roles" data-toggle="collapse" aria-expanded="false">
+                                <i class="fa fa-gear"></i> Roles<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                            </a>
+                            <ul id="nav_sys_roles" class="nav nav-second collapse">
+                                <li class="iconic-color-default"><a href="sysRoleAsset.html">Asset</a></li>
+                                <li class="iconic-color-default"><a href="sysRolePersonnel.html">Personnel</a></li>
+                                <li class="iconic-color-default"><a href="sysRolePlanning.html">Planning</a></li>
+                                <li class="iconic-color-default"><a href="sysRoleCommittee.html">Committee</a></li>
+                                <li class="iconic-color-default"><a href="sysRoleStatus.html">Status</a></li>
+                                <li class="iconic-color-default"><a href="sysRoleDateSetting.html">Date Setting</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-system-setting">
+                            <a href="#nav_sys_funding" data-toggle="collapse" aria-expanded="false">
+                                <i class="fa fa-balance-scale"></i> Funding<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                            </a>
+                            <ul id="nav_sys_funding" class="nav nav-second collapse">
+                                <li class="iconic-color-default"><a href="sysFundSource.html">Source</a></li>
+                                <li class="iconic-color-default"><a href="sysFundAsset.html">Asset</a></li>
+                                <li class="iconic-color-default"><a href="sysFundPersonnel.html">Personnel</a></li>
+                                <li class="iconic-color-default"><a href="sysFundRequest.html">Request</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-system-setting">
+                            <a href="#nav_sys_email" data-toggle="collapse" aria-expanded="false">
+                                <i class="fa fa-envelope"></i> Email<span class="sub-nav-icon"> <i class="stroke-arrow"></i> </span>
+                            </a>
+                            <ul id="nav_sys_email" class="nav nav-second collapse">
+                                <li class="iconic-color-default"><a href="sysEmailStatus.html">Status</a></li>
+                                <li class="iconic-color-default"><a href="sysEmailApproval.html">Approval</a></li>
+                                <li class="iconic-color-default"><a href="sysEmailFunded.html">Funded</a></li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li class="nav-info">
+                            <i class="pe pe-7s-shield text-accent"></i>
+                        </li>
+                        -->
                     </ul>
                 </nav>
             </aside>
             <!-- End navigation-->
             <!-- Main content-->
             <section class="content">
-                <div class="container-fluid">
+                <div class="container-fluid">                    
                     <div class="row">
                         <div class="col-md-12">
                             <div class="view-header">
@@ -130,18 +183,18 @@
             <!-- End main content-->
         </div>
         
-        <!-- luna-1.2 Vendor javascript -->
-        <script src="../luna-1.2/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="../luna-1.2/vendor/jquery-ui/jquery-ui.min.js"></script>
-        <script src="../luna-1.2/vendor/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../luna-1.2/vendor/pacejs/pace.min.js"></script>
-        <script src="../luna-1.2/vendor/toastr/toastr.min.js"></script>
-        <script src="../luna-1.2/vendor/sparkline/index.js"></script>
-        <script src="../luna-1.2/vendor/flot/jquery.flot.min.js"></script>
-        <script src="../luna-1.2/vendor/flot/jquery.flot.resize.min.js"></script>
-        <script src="../luna-1.2/vendor/flot/jquery.flot.spline.js"></script>
-        <script src="../luna-1.2/vendor/datatables/datatables.min.js"></script>
-        <script src="../luna-1.2/scripts/luna.js"></script>
+        <!-- luna-1.3 Vendor javascript -->
+        <script src="../luna-1.3/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="../luna-1.3/vendor/jquery-ui/jquery-ui.min.js"></script>
+        <script src="../luna-1.3/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../luna-1.3/vendor/pacejs/pace.min.js"></script>
+        <script src="../luna-1.3/vendor/toastr/toastr.min.js"></script>
+        <script src="../luna-1.3/vendor/sparkline/index.js"></script>
+        <script src="../luna-1.3/vendor/flot/jquery.flot.min.js"></script>
+        <script src="../luna-1.3/vendor/flot/jquery.flot.resize.min.js"></script>
+        <script src="../luna-1.3/vendor/flot/jquery.flot.spline.js"></script>
+        <script src="../luna-1.3/vendor/datatables/datatables.min.js"></script>
+        <script src="../luna-1.3/scripts/luna.js"></script>
         <!-- include javascript -->
         <!-- application javascript -->
         <script src="js/home.js"></script>
